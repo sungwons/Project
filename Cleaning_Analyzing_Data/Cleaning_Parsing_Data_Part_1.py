@@ -13,7 +13,7 @@ def strip_characters(string):
     string = string.strip()
     return string
 
-def process_date(string):
+def process_date(date):
     if "-" in date:
         split_date = date.split("-")
         date_one = split_date[0]
@@ -29,7 +29,7 @@ def process_date(string):
 processed_test_data = []
 
 for d in stripped_test_data:
-    date = process_date(d)
+    data = process_date(d)
     processed_test_data.append(data)
     
 for row in moma:
@@ -37,5 +37,4 @@ for row in moma:
     date = strip_characters(date)
     date = process_date(date)
     row[6] = date
-    
     
